@@ -55,7 +55,8 @@ export default class Pagination extends React.Component {
     }
   };
 
-  renderPaginationItems(pagesArray) {
+  renderPaginationItems(pageNumber, pagesArray) {
+    const maxPageOptions = 5;
     const finalArray = pagesArray.map(pageNumber => (
       <Page
         key={pageNumber.toString()}
@@ -77,8 +78,12 @@ export default class Pagination extends React.Component {
         <PageEllipsis />
       </Page>
     );
-    finalArray.splice(0, 0, ellipsis);
-    finalArray.splice(-1, 0, ellipsis);
+    if (pageNumber > maxPageOptions) {
+      finalArray.splice(1, 0, ellipsis);
+    }
+    if (finalArray > maxPageOptions) {
+      finalArray.splice(-1, 0, ellipsis);
+    }
     return finalArray;
   }
 
@@ -123,7 +128,7 @@ export default class Pagination extends React.Component {
             Next
           </PageControl>
 
-          <PageList>{this.renderPaginationItems(pagesArray)}</PageList>
+          <PageList>{this.renderPaginationItems(pageNumber, pagesArray)}</PageList>
         </BloomerPagination>
       );
     }

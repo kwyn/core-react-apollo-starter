@@ -6,10 +6,12 @@ import modules from '../../../../../../modules';
 import settings from '../../../../../../../../../settings';
 
 const NavBar = () => (
-  <Navbar color="faded">
+  <Navbar>
     <NavbarMenu>
       <NavbarStart>
-        <NavLink to="/">{settings.app.name}</NavLink>
+        <NavbarItem>
+          <NavLink to="/">{settings.app.name}</NavLink>
+        </NavbarItem>
         {modules.navItems}
       </NavbarStart>
       <NavbarEnd>

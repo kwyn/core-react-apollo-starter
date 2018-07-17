@@ -24,7 +24,7 @@ export default class LanguagePicker extends React.Component {
       <section className="lang-section">
         {i18n.language &&
           languages.length > 1 && (
-            <Dropdown isActive={this.state.dropdownOpen} toggle={this.toggle}>
+            <Dropdown isActive={this.state.dropdownOpen} onClick={this.toggle}>
               <DropdownTrigger>
                 <Button aria-haspopup="true" aria-controls="dropdown-menu">
                   <span> {i18n.language.slice(0, 2).toUpperCase()}</span>

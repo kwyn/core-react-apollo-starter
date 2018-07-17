@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BloomerSelect } from 'bloomer';
+import { Select as BloomerSelect } from 'bloomer';
 
 const Select = ({ children, ...props }) => {
   return (

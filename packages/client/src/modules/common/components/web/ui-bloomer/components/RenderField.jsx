@@ -12,7 +12,7 @@ const RenderField = ({ input, label, type, meta: { touched, error }, children, p
     <Field>
       {label && <Label>{label}</Label>}
       <Control>
-        <Input {...input} placeholder={label || placeholder} type={type} invalid={!valid}>
+        <Input {...input} placeholder={label || placeholder} type={type} invalid={!valid ? true : undefined}>
           {children}
         </Input>
         {touched && (error && <Help isColor="danger">{error}</Help>)}

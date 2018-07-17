@@ -6,8 +6,8 @@ const FormItem = ({ children, label, labelProps, ...props }) => {
   return (
     <FormGroup {...props}>
       {label && (
-        <FieldLabel {...labelProps}>
-          <Label isSize={labelProps.size || 'medium'}>{label}:&nbsp;</Label>
+        <FieldLabel>
+          <Label isSize="medium">{label}:&nbsp;</Label>
         </FieldLabel>
       )}
       {children}
