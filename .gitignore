@@ -4,3 +4,8 @@
 *.log
 .cache
 **.sqlite3
+.DS_Store
+jsconfig.json
+public
+*.iml
+.env
